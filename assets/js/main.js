@@ -24,6 +24,10 @@ console.log(customerAge);
 
 const generaBiglietto = document.getElementById("genera");
 
+const annullaBiglietto = document.getElementById("annulla");
+
+let cancellaForm = document.getElementById("cancella_tutto");
+
 let inputNameEl;
 
 let inputKmEl;
@@ -50,87 +54,93 @@ let codiceRounded;
 const outputPrezzo = document.querySelector('#costo_biglietto');
 
 
+/* EVENTLISTENER ON CLICK */
+
 generaBiglietto.addEventListener('click', function() {
     console.log("click")
     
 
 /*  input value */
 
-inputNameEl = document.getElementById("input_name").value;
-console.log(inputNameEl);
+    inputNameEl = document.getElementById("input_name").value;
+    console.log(inputNameEl);
 
-inputKmEl = document.getElementById("input_km").value;
-console.log(inputKmEl);
+    inputKmEl = document.getElementById("input_km").value;
+    console.log(inputKmEl);
 
-inputAgeEl = document.getElementById("inputState").value;
-console.log(inputAgeEl);
+    inputAgeEl = document.getElementById("inputState").value;
+    console.log(inputAgeEl);
 
 
-/* prezzo del biglietto */
+    /* prezzo del biglietto */
 
-let ticketPrice = (Number(inputKmEl * 0.21));
-console.log(ticketPrice);
+    let ticketPrice = (Number(inputKmEl * 0.21));
+    console.log(ticketPrice);
 
 
 /* sconti */
 
 
-if (inputAgeEl === "minorenne"){
-    ticketPrice = Number(ticketPrice - (ticketPrice * 20 / 100));
-    console.log(ticketPrice);
-    console.log("20%");
+    if (inputAgeEl === "minorenne"){
+        ticketPrice = Number(ticketPrice - (ticketPrice * 20 / 100));
+        console.log(ticketPrice);
+        console.log("20%");
 
-    outputTicket.innerHTML = "Biglietto Minori"
-}
+        outputTicket.innerHTML = "Biglietto Minori"
+    }
 
-else if (inputAgeEl === "anziano"){
-    ticketPrice = Number(ticketPrice - (ticketPrice * 40 / 100));
-    console.log(ticketPrice);
-    console.log("40%");
+    else if (inputAgeEl === "anziano"){
+        ticketPrice = Number(ticketPrice - (ticketPrice * 40 / 100));
+        console.log(ticketPrice);
+        console.log("40%");
 
-    outputTicket.innerHTML = "Biglietto over 65"
-}
+        outputTicket.innerHTML = "Biglietto over 65"
+    }
 
-else if (inputAgeEl === "maggiorenne"){
-    outputTicket.innerHTML = "Biglietto standard";
-}
-    
+    else if (inputAgeEl === "maggiorenne"){
+        outputTicket.innerHTML = "Biglietto standard";
+    }
 
+    outPutName.innerHTML = inputNameEl; 
 
+    numCarrozza = Math.random() * 10 / 2 ;
 
+    carrozzaRounded = numCarrozza.toFixed();
 
-
-
-outPutName.innerHTML = inputNameEl; 
-
-numCarrozza = Math.random() * 10 / 2 ;
-
-carrozzaRounded = numCarrozza.toFixed();
-
-outputCarrozza.innerHTML = carrozzaRounded;
+    outputCarrozza.innerHTML = carrozzaRounded;
 
 
-numCodice = (Math.random() * 100000);
+    numCodice = (Math.random() * 100000);
 
-codiceRounded = numCodice.toFixed();
+    codiceRounded = numCodice.toFixed();
 
-outputCodice.innerHTML = codiceRounded;
+    outputCodice.innerHTML = codiceRounded;
 
-/* price output */
+    /* price output */
 
-const ticketPriceRounded = ticketPrice.toFixed(2)
-console.log(ticketPriceRounded) 
+    const ticketPriceRounded = ticketPrice.toFixed(2)
+    console.log(ticketPriceRounded) 
 
-const finalPrice = document.getElementById("final_price");
-console.log(finalPrice);
+    const finalPrice = document.getElementById("final_price");
+    console.log(finalPrice);
 
 
 
-finalPrice.innerHTML = ticketPriceRounded; 
+    finalPrice.innerHTML = ticketPriceRounded + "€"; 
 
 
 })
 
+
+/* EVENTLISTENER ANNULLA */
+
+annullaBiglietto.addEventListener("click", function(){
+    console.log("click")    
+
+   
+    
+
+})
 
  
 //L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). 

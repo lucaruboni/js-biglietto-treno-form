@@ -1,0 +1,37 @@
+
+main{
+    font-family: 'Lora', serif;
+    background-color: #e50914;
+    color: white;
+    height: 100vh;
+
+}
+img{
+    width: 100%;
+}
+
+h1{
+    font-weight: 700;
+    font-family: 'Staatliches', cursive;
+
+}
+
+.bg_mio{
+    background-color: #303030;
+}
+
+.input_name{
+    margin-bottom: 1.1rem;
+}
+
+#input_name, #input_km{
+    border: 1px solid gray;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+
+#cancella_tutto, #ombra_biglietto{
+    box-shadow: 0 0 10px black;
+}
+
